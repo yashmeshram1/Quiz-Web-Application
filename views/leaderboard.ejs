@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Leaderboard</title>
+    <style>
+      td {
+        color: black;
+      }
+      .container {
+        max-width: 1000px;
+      }
+      tbody tr {
+        background-color: white;
+      }
+      /* Add some spacing and style to the leaderboard table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      /* Style the table headers */
+      thead {
+        background-color: #007bff;
+        color: white;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ccc;
+      }
+
+      /* Add alternating row background colors */
+      tbody tr:nth-child(odd) {
+        background-color: #f2f2f2;
+      }
+
+      /* Style the table header cells */
+      th {
+        border: 1px solid #ccc;
+      }
+      tbody tr:hover{
+        background-color: yellow;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Leaderboard</h1>
+        <!-- Add the form for downloading the leaderboard -->
+        <form action="/download" method="get">
+            <button type="submit">Download Leaderboard</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Department</th>
+                    <th>Score</th>
+                    <th>Submission Date & Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% leaderboard.forEach((user) => { %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.rollno %></td>
+                    <td><%= user.department %></td>
+                    <td><%= user.score %></td>
+                    <td><%= user.submissionDateTime %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <script>
+      window.onbeforeunload = function () {
+        return "Are you sure you want to leave? Your current progress will be lost.";
+      };
+    </script>
+</body>
+</html>

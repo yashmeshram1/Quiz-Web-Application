@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>seek coding</title>
+  <!--
+<link rel="stylesheet" href="p1.css">
+   -->
+  <!-- <link rel="stylesheet" href="p2.css"> -->
+  <style>
+    .anime-container {
+      position: relative;
+    }
+
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      background-color: hsl(60, 100%, 80%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    body {
+      background-color: black;
+
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* button
+{
+    text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgb(145, 92, 182);
+  padding: 15px 40px;
+  border-radius: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+} */
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: #fffb00;
+    }
+
+    .glow-on-hover {
+      width: 220px;
+      height: 50px;
+      border: none;
+      outline: none;
+      color: #fff;
+      background: #111;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 10px;
+    }
+
+    .glow-on-hover:before {
+      content: '';
+      background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+      color: #000
+    }
+
+    .glow-on-hover:active:after {
+      background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
+
+    .glow-on-hover:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+
+    @keyframes glowing {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 400% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .full-page {
+      height: 100%;
+      width: 100%;
+      /* background-image: linear-gradient(
+    to right top,
+    #72174b,
+    #5b204e,
+    #44244a,
+    #312441,
+    #232234,
+    #222339,
+    #21253e,
+    #1e2643,
+    #272b5e,
+    #3a2d76,
+    #57298b,
+    #79199b
+  ); */
+      background-color: black;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      padding: 6px;
+      padding-left: 50px;
+      padding-right: 30px;
+      padding-top: 50px;
+    }
+
+    nav {
+      flex: 1;
+      text-align: right;
+    }
+
+    nav ul {
+      display: inline-block;
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    nav ul li button {
+      font-size: 20px;
+      color: white;
+      outline: none;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-family: sans-serif;
+    }
+
+    nav ul li button:hover {
+      color: aqua;
+    }
+
+    nav ul li a:hover {
+      color: aqua;
+    }
+
+    */ a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-size: 28px;
+    }
+
+    l {
+      color: rgb(198, 219, 10);
+      font-size: 28px;
+    }
+
+    /* text  effect code */
+
+    @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff
+    }
+
+    h2 {
+      font-family: "Montserrat Medium";
+      max-width: 80ch;
+      text-align: center;
+      transform: scale(0.94);
+      animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    }
+
+    @keyframes scale {
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    span {
+      display: inline-block;
+      opacity: 0;
+      filter: blur(4px);
+    }
+
+    span:nth-child(1) {
+      animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(2) {
+      animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(3) {
+      animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(4) {
+      animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(5) {
+      animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(6) {
+      animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(7) {
+      animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(8) {
+      animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(9) {
+      animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(10) {
+      animation: fade-in 0.8s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(11) {
+      animation: fade-in 0.8s 1.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(12) {
+      animation: fade-in 0.8s 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(13) {
+      animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(14) {
+      animation: fade-in 0.8s 1.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(15) {
+      animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(16) {
+      animation: fade-in 0.8s 1.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(17) {
+      animation: fade-in 0.8s 1.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    span:nth-child(18) {
+      animation: fade-in 0.8s 1.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    @keyframes fade-in {
+      100% {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+
+    
+  </style>
+  <!---we had linked our css file----->
+</head>
+
+<body>
+
+
+
+
+
+
+
+  <div id="grad1"></div>
+
+  <div class="full-page">
+    <!-- <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi temporibus neque hic architecto delectus quod exercitationem fuga maiores ad nam?
+        </p> -->
+    <div class="navbar">
+      <div class="anime-container"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+      <div>
+        <!--      <a href='website.html'>Seek Coding</a>-->
+      </div>
+      <nav>
+        <ul id='MenuItems'>
+          <li><a href='#'>Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/ourteam">Our team</a></li>
+          <li><a href="/contactus">Contact</a></li>
+          <!-- <li><a href='/login'>Login</a></li> -->
+        </ul>
+      </nav>
+
+    </div>
+    <center><img src="/logo.png" alt="" width="350" height="350"></center>
+
+
+
+    <!-- text effect code        -->
+
+
+    <center>
+      <h2>
+        <span>There</span>
+        <span>are</span>
+        <span>no</span>
+        <span>limits</span>
+        <span>to</span>
+        <span>what</span>
+        <span>you</span>
+        <span>can</span>
+        <span>accomplish,</span>
+        <span>except</span>
+        <span>the</span>
+        <span>limits</span>
+        <span>you</span>
+        <span>place</span>
+        <span>on</span>
+        <span>your</span>
+        <span>own</span>
+        <span>thinking.</span>
+      </h2>
+    </center>
+    <br><br>
+
+    <!-- code for login button on 1st page -->
+    <center>
+      <div>
+        <font style="color:#fff">
+            <button class="glow-on-hover" type="button"><a href="/login">Login</a></button>
+
+        </font>
+
+      </div>
+
+    </center>
+
+
+
+    <!--
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+<center><img src="images\logo.jpg"  height=250 width=250></center>
+
+
+-->
+    <script>
+      var container = document.querySelector(".anime-container");
+
+      var sparks = [];
+      var sparksIndex = 0;
+
+      var sparkCount = 100;
+      var sparkParticleCount = 6;
+
+      function lerp(p1, p2, t) {
+        return p1 + (p2 - p1) * t;
+      }
+
+      const ease = {
+        linear: (t) => t,
+        inQuad: (t) => t * t,
+        outQuad: (t) => t * (2 - t),
+        inOutQuad: (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t),
+        inCubic: (t) => t * t * t,
+        outCubic: (t) => --t * t * t + 1,
+        inOutCubic: (t) =>
+          t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+        inQuart: (t) => t * t * t * t,
+        outQuart: (t) => 1 - --t * t * t * t,
+        inOutQuart: (t) => (t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t),
+        inQuint: (t) => t * t * t * t * t,
+        outQuint: (t) => 1 + --t * t * t * t * t,
+        inOutQuint: (t) =>
+          t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t
+      };
+
+      function circularRandom(r) {
+        r = r * Math.sqrt(Math.abs(Math.random() - Math.random()));
+        var theta = Math.random() * 2 * Math.PI;
+        var x = r * Math.cos(theta);
+        var y = r * Math.sin(theta);
+        return { x: x, y: y, r: r };
+      }
+
+      for (var i = 0; i < sparkCount; i++) {
+        var spark = { els: [] };
+
+        for (var j = 0; j < sparkParticleCount; j++) {
+          var dot = document.createElement("div");
+          dot.classList.add("dot");
+          container.appendChild(dot);
+          spark.els.push(dot);
+
+          var particleSize = Math.random() * (20 - 5) + 5;
+          var sparkRadius = 20;
+          var { x, y, r } = circularRandom(sparkRadius);
+
+          dot.style.width =
+            lerp(particleSize, 1, ease.outQuad(r / sparkRadius)) + "px";
+          dot.style.height =
+            lerp(particleSize, 1, ease.outQuad(r / sparkRadius)) + "px";
+          dot.style.opacity = "0";
+          dot.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+        }
+
+        spark.anime = anime({
+          targets: spark.els,
+          loop: false,
+          easing: "linear",
+          autoplay: false,
+          delay: anime.stagger(8),
+          opacity: [
+            { value: 0, duration: 0 },
+            { value: 1, duration: 40 },
+            {
+              value: 0,
+              duration: function () {
+                return anime.random(500, 800);
+              }
+            }
+          ],
+          width: { value: 2, duration: 500 },
+          height: { value: 2, duration: 500 },
+          translateX: {
+            value: function () {
+              return anime.random(-30, 30);
+            },
+            duration: 800
+          },
+          translateY: {
+            value: function () {
+              return anime.random(-30, 30);
+            },
+            duration: 800
+          }
+        });
+        sparks.push(spark);
+      }
+
+      window.addEventListener(
+        "mousemove",
+        function (e) {
+          anime.set(sparks[sparksIndex].els, {
+            left: e.clientX,
+            top: e.clientY
+          });
+          sparks[sparksIndex].anime.restart();
+          sparksIndex++;
+          if (sparksIndex == sparks.length) sparksIndex = 0;
+        },
+        false
+      );
+    </script>
+
+</body>
+
+</html>

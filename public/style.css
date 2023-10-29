@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-container{
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+.form-group label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.form-group input{
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.submit-btn{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #472dbb;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit-btn:hover{
+    background-color: #4565a0;
+
+}
+
+p{
+    margin-top: 15px;
+}
+/* Reset some default styles */
+body, html {
+   
+    margin: 70px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Apply a background image to the entire page */
+body {
+    color: #fff;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(mm.jpg);
+    font-family: 'Lumanosimo', cursive;
+    background-size: cover;
+background-position: center;
+    
+    
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    padding: 30px 10%;
+    background: linear-gradient(rgba(0,0,0,0.75),rgba(83, 214, 254, 0.75));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-radius: 7px;
+}
+.logo {
+    font-size: 32px;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #09001d);
+
+}
+
+.header ul li {
+    font-size: 18px;
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    
+}
+.header ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.header ul li a:hover,
+.header ul li a:active {
+    color:  lightskyblue;
+}
+
+
+
+/* Center the container and change its dimensions */
+.container {
+    max-width: 800px;
+    margin: -80px auto;
+    padding: 50px;
+    background-color: transparent;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   
+}
+
+/* Style headings */
+h1 {
+
+    /* color: white;
+    text-align: center;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #09001d); */
+
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,
+            #47e92b 0%,
+            #2dc3e8 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 30px;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Style buttons with hover effect */
+.container-content button {
+    width: 190px;
+    height: 55px;
+    background-color:rgba(83, 214, 254, 0.75)    ;
+    top: 10px;
+    left: 230px;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(63, 192, 243);
+    font-size: 18px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:  0.5s;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+button:hover {
+    background-color: #09001d; /* Darker blue on hover */
+    box-shadow: none;
+    
+}
+
+
+
+/* Style form elements with hover effect */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: rgb(253, 252, 252)fff; /* Blue label color */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #020202; /* Text color */
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:hover {
+    border-color: #007bff; /* Blue border on hover */
+}
+
+/* Style quiz questions */
+.question {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid #060606;
+    border-radius: 5px;
+    color: #070707;
+}
+
+/* Style radio buttons and labels */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+/* Style the final score message */
+.score {
+    font-size: 24px;
+    color: #007bff;
+    text-align: center;
+}
+
+/* Add more CSS rules as needed */
+/* Disable text selection for the entire page */
+body {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Optionally, enable text selection for specific elements, such as form inputs */
+input[type="text"], textarea {
+    user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+}
+
+

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive our team</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        transition: all 0.2s linear;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      body {
+        background: url("blob-scene-haikei.svg");
+      }
+      h1 {
+        font-size: 40px;
+        margin-top: 20px;
+        color: #e74c3c;
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+      .card {
+        height: 500px;
+        width: 290px;
+        margin: 20px;
+        box-shadow: 0 3px 5px #000;
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: center;
+        background-color: #222;
+      }
+      .card .bg-image img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        clip-path: polygon(0 0, 100% 0%, 100% 70%, 45% 100%, 0 70%);
+      }
+      .card .pic img {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        border: 10px solid #222;
+        margin-top: -90px;
+        position: relative;
+      }
+      .card .info h3 {
+        color: #f0f0f0;
+        font-size: 20px;
+        padding: 10px 0;
+      }
+      .card .info span {
+        font-size: 15px;
+        color: #e74c3c;
+      }
+      .card .info p {
+        font-size: 13px;
+        padding: 10px 20px;
+        color: #999;
+      }
+      .card .info .icons a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #e74c3c;
+        margin-top: 20px;
+        padding: 0 6px;
+      }
+      .card .info .icons a:hover {
+        color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>our team </h1>
+    <section class="container">
+      <div class="card">
+        <div class="bg-image">
+          <img src="bg.jpg" alt="" />
+        </div>
+        <div class="pic">
+          <img src="ic.png" alt="" />
+        </div>
+        <div class="info">
+          <h3>Ishika Anasane</h3>
+          <span><i class="fas fa-code"></i> Front-end Developer</span>
+          <p>
+            Ishika is a dedicated web developer with a strong focus on user
+            experience and functionality.
+          </p>
+          <div class="icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="bg-image">
+          <img src="bg.jpg" alt="" />
+        </div>
+        <div class="pic">
+          <img src="ic.png" alt="" />
+        </div>
+        <div class="info">
+          <h3>Arya Choudhary</h3>
+          <span><i class="fas fa-code"></i> UI UX Designer</span>
+          <p>
+            Arya is a creative UI/UX designer known for crafting visually
+            stunning and user-friendly interfaces. With a strong focus on
+            user-centric design
+          </p>
+          <div class="icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="bg-image">
+          <img src="bg.jpg" alt="" />
+        </div>
+        <div class="pic">
+          <img src="ic.png" alt="" />
+        </div>
+        <div class="info">
+          <h3>Sarvesh Khumkar</h3>
+          <span><i class="fas fa-code"></i> Data Analyst</span>
+          <p>
+            Sarvesh is a skilled data analyst with a keen eye for patterns and
+            insights. With a passion for deciphering complex data sets
+          </p>
+          <div class="icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="bg-image">
+          <img src="bg.jpg" alt="" />
+        </div>
+        <div class="pic">
+          <img src="ic.png" alt="" />
+        </div>
+        <div class="info">
+          <h3>Yash Meshram</h3>
+          <span><i class="fas fa-code"></i> Backend Developer</span>
+          <p>
+            Yash is a proficient backend developer known for his expertise in
+            building robust and efficient server-side applications
+          </p>
+          <div class="icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-github"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

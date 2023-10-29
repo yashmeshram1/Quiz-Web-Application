@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="mp1.css"> -->
+
+    <!-- <link rel="stylesheet" href="sidebar.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: 0.2s linear;
+      }
+
+      .container {
+        background: linear-gradient(
+          to right top,
+          #72174b,
+          #5b204e,
+          #44244a,
+          #312441,
+          #232234,
+          #222339,
+          #21253e,
+          #1e2643,
+          #272b5e,
+          #3a2d76,
+          #57298b,
+          #79199b
+        );
+        padding: 15px 9%;
+        padding-bottom: 100px;
+        height: 20cm;
+        
+      }
+
+      .container .heading {
+        text-align: center;
+        padding-bottom: 35px;
+        color: #fff;
+        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        font-size: 50px;
+      }
+
+      .container .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+        gap: 15px;
+      }
+
+      .container .box-container .box {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        background: #fff;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .container .box-container .box img {
+        height: 80px;
+      }
+
+      .container .box-container .box h3 {
+        color: #444;
+        font-size: 22px;
+        padding: 10px 0;
+      }
+
+      .container .box-container .box p {
+        color: #777;
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .container .box-container .box .btn {
+        margin-top: 10px;
+        display: inline-block;
+        background: #333;
+        color: #fff;
+        font-size: 17px;
+        border-radius: 5px;
+        padding: 8px 25px;
+      }
+
+      .container .box-container .box .btn:hover {
+        letter-spacing: 1px;
+      }
+
+      .container .box-container .box:hover {
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        transform: scale(1.03);
+      }
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500");
+      * {
+        padding: 0;
+        margin: 0;
+
+        list-style: none;
+        text-decoration: none;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        height: 20cm;
+      }
+      .sidebar {
+        position: fixed;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #042331;
+        transition: all 0.5s ease;
+      }
+      .sidebar header {
+        font-size: 22px;
+        color: white;
+        line-height: 70px;
+        text-align: center;
+        background: #063146;
+        user-select: none;
+      }
+      .sidebar ul a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 65px;
+        font-size: 20px;
+        color: white;
+        padding-left: 40px;
+        box-sizing: border-box;
+        border-bottom: 1px solid black;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        transition: 0.4s;
+      }
+      ul li:hover a {
+        padding-left: 50px;
+      }
+      .sidebar ul a i {
+        margin-right: 16px;
+      }
+      #check {
+        display: none;
+      }
+      label #btn,
+      label #cancel {
+        position: absolute;
+        background: #042331;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      label #btn {
+        left: 40px;
+        top: 25px;
+        font-size: 35px;
+        color: white;
+        padding: 6px 12px;
+        transition: all 0.5s;
+      }
+      label #cancel {
+        z-index: 1111;
+        left: -195px;
+        top: 17px;
+        font-size: 30px;
+        color: #0a5275;
+        padding: 4px 9px;
+        transition: all 0.5s ease;
+      }
+      #check:checked ~ .sidebar {
+        left: 0;
+      }
+      #check:checked ~ label #btn {
+        left: 250px;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #check:checked ~ label #cancel {
+        left: 195px;
+      }
+      #check:checked ~ section {
+        margin-left: 250px;
+      }
+      section {
+        background: url(bg.jpeg) no-repeat;
+        /*background-position: center;*/
+        background-repeat: no-repeat;
+        background: linear-gradient(
+          to right top,
+          #72174b,
+          #5b204e,
+          #44244a,
+          #312441,
+          #232234,
+          #222339,
+          #21253e,
+          #1e2643,
+          #272b5e,
+          #3a2d76,
+          #57298b,
+          #79199b
+        );
+        height: 50vh;
+        background-size: cover;
+
+        transition: all 0.5s;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <!-- <style> 
+    body{
+background-color: beige;
+    }
+
+   h1{
+     font-style: italic;
+    font-size: xx-large;
+        text-align: center;
+        text-decoration: double;
+        
+    }
+
+
+</style>
+
+-->
+  <body>
+
+    <input type="checkbox" id="check" />
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>My App</header>
+      <ul>
+        <li>
+          <a href="#"><i class="fas fa-qrcode"></i>Dashboard</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-link"></i>Shortcuts</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-stream"></i>Overview</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-calendar-week"></i>Events</a>
+        </li>
+        <li>
+          <a href="#"><i class="far fa-question-circle"></i>About</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-sliders-h"></i>Services</a>
+        </li>
+        <li>
+          <a href="#"><i class="far fa-envelope"></i>Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!-- <h1>Welcome, <%= name %>!</h1>
+  <p>Roll No: <%= roll %></p>
+  <p>Department: <%= dept %></p> -->
+    <section>
+      <div class="container">
+        <h1 class="heading">our services</h1>
+
+        <div class="box-container">
+          <div class="box">
+            <img src="icon-1.png" alt="" />
+            <h3>HTML 5</h3>
+            <p>
+              Test your knowledge with an engaging HTML quiz, designed to challenge and enhance your understanding.
+            </p>
+            <a href="#" class="btn" id="startQuizButton">Start Quiz</a>
+          </div>
+
+          <div class="box">
+            <img src="icon-2.png" alt="" />
+            <h3>CSS 3</h3>
+            <p>
+              Explore your CSS knowledge through our dynamic quiz, aimed at honing your styling skills effectively.
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="/icon-3.png" alt="" />
+            <h3>JavaScript</h3>
+            <p>
+              Put your JavaScript expertise to the test with our interactive quiz, tailored for honing your coding prowess.
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="icon-4.png" alt="" />
+            <h3>SASS</h3>
+            <p>
+              Refine your Sass skills with our comprehensive quiz, tailored to boost your expertise in efficient styling
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="/icon-5.png" alt="" />
+            <h3>JQuery</h3>
+            <p>
+              
+The jQuery quiz is designed to test your knowledge and skills in using the jQuery library for efficient and dynamic web developmen
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="/icon-6.png" alt="" />
+            <h3>React.js</h3>
+            <p>
+              Test your knowledge and skills in React.js with our comprehensive quiz
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      document.getElementById('startQuizButton').addEventListener('click', function() {
+      
+        window.location.href = '/quiz'; 
+      });
+    </script>
+  </body>
+</html>

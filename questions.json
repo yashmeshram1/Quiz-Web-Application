@@ -1,0 +1,77 @@
+[
+    {
+        "question": "Who is the father of HTML?",
+        "options": ["Rasmus Lerdorf" ,"Tim Berners-Lee","Sergey Brin","Brendan Eich"],
+        "correctAnswer": "Tim Berners-Lee"
+    },
+    {
+        "question": "What is the correct syntax of web address?",
+        "options": ["port://domain.filenmae:path/scheme/prefix","prefix://scheme.port:domain/filename/path","path://prefix.port:domain/filename/scheme","scheme://prefix.domain:port/path/filename"],
+        "correctAnswer": "scheme://prefix.domain:port/path/filename"
+    },
+    {
+        "question": "Which attribute specifies a unique alphanumeric identifier to be associated with an element?",
+        "options": [" type","article","id","class"],
+        "correctAnswer": "id"
+    },
+    {
+        "question": " Which of the following is an HTML specification used to add more information to HTML tags?",
+        "options": ["Modifydata","Minidata","Macrodata","Microdata"],
+        "correctAnswer": "Microdata"
+    },
+    {
+        "question": "Javascript is a ______________?",
+        "options": ["server side scripting language.","client side scripting language.","Either (A) or (B)","Neither (A) nor (B)"],
+        "correctAnswer": "client side scripting language"
+    },
+    {
+        "question": " _________ keyword is used to declare variables in javascript.",
+        "options": ["Var","Dim","String","None of the above"],
+        "correctAnswer": "Var"
+    },
+    {
+        "question": "How many sizes of headers are available in HTML by default?",
+        "options": ["1", "5", "6", "2"],
+        "correctAnswer": "6"
+    },
+    {
+        "question": "The CSS inside HTML elements used alongside style attribute is called?",
+        "options": ["Inline CSS", "Internal CSS", "External CSS", "None of the above"],
+        "correctAnswer": "Inline CSS"
+    },
+    {
+        "question": "The default link color for hyperlinks:",
+        "options":["green","blue","purple","red"],
+        "correctAnswer":"blue"
+    },
+    {
+        "question": "Which type of JavaScript language is ?",
+        "options": ["Object-Oriented"," Object-Based","Assembly-language","High-level"],
+        "correctAnswer": "Object-Based"
+    },
+    {
+        "question": "The 'function' and 'var' are known as:",
+        "options": ["Keywords","Data types","Declaration statements"," Prototypes"],
+        "correctAnswer": "Declaration statements"
+    },
+    {
+        "question": " In the JavaScript, which one of the following is not considered as an error:",
+        "options": ["Syntax error"," Missing of semicolons","Division by zero","Missing of Bracket"],
+        "correctAnswer": "Division by zero"
+    },
+    {
+        "question": "Which of the following tag is used to embed css in html page?",
+        "options": ["<css>","<!DOCTYPE html>","<script>","<style>"],
+        "correctAnswer": "<style>"
+    },
+    {
+        "question": "Which of the following CSS selectors are used to specify a group of elements?",
+        "options": ["tag","id","class","both class and tag"],
+        "correctAnswer": "class"
+    },
+    {
+        "question": " What will be the output of following CSS code snippet => h1 {color: 'green';}",
+        "options": ["nothings happen","error occurs","heading becomes dark-green","heading becomes green"],
+        "correctAnswer": "nothings happen"
+    }
+]

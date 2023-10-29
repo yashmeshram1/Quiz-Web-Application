@@ -1,0 +1,140 @@
+<!-- Updated quiz.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Quiz</title>
+    <style>
+        /* Add your custom styles here for horizontally aligning questions */
+        .question {
+            display: none;
+        }
+        /* Styles for the video box */
+        #video-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 200px; /* Adjust the width as needed */
+            height: 150px; /* Adjust the height as needed */
+            background-color: #fff; /* Background color for the video box */
+            border: 2px solid #ccc; /* Border style */
+            border-radius: 5px; /* Rounded corners */
+            overflow: hidden; /* Hide overflowing content */
+        }
+        #video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Name: <%= name %></p>
+        <p>Roll No: <%= roll %></p>
+        <p>Department: <%= department %></p>
+    </div>
+    <div class="container">
+        
+        <h1>Quiz Questions</h1>
+        <div id="quiz-timer">Time Left: <span id="countdown">60</span> seconds</div>
+        
+        
+        <!-- Video container with an increased box size and styles -->
+        <div id="video-container">
+            <video id="video" autoplay muted></video>
+        </div>
+        
+        <form action="/score" method="post" id="quiz-form">
+            <% questions.forEach((q, index) => { %>
+                <div class="question" id="question<%= index %>">
+                    <p><%= q.question %></p>
+                    <% q.options.forEach((option, optIndex) => { %>
+                        <input type="radio" id="q<%= index %>-opt<%= optIndex %>" name="q<%= index %>" value="<%= option %>" required>
+                        <label for="q<%= index %>-opt<%= optIndex %>"><%= option %></label><br>
+                    <% }); %>
+                </div>
+            <% }); %>
+            <div class="navigation-buttons">
+                <button type="button" id="prev-button" disabled>Previous</button>
+                <button type="button" id="next-button">Next</button>
+            </div>
+            <input type="hidden" name="name" value="<%= name %>">
+            <input type="hidden" name="roll" value="<%= roll %>">
+            <input type="hidden" name="department" value="<%= department %>">
+            <button type="submit" id="submit-button" style="display: none;">Submit</button>
+        </form>
+    </div>
+    <script>
+        var timeLimit = 90;
+        var currentQuestionIndex = 0;
+        var questions = document.querySelectorAll(".question");
+        var video = document.getElementById("video");
+        var startCaptureButton = document.getElementById("startCaptureButton");
+        var stream;
+
+        // Automatically start capturing the user's face
+        document.addEventListener("DOMContentLoaded", async function () {
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+            } catch (error) {
+                console.error("Error accessing camera:", error);
+            }
+        });
+
+        var timer = setInterval(function () {
+            var countdownElement = document.getElementById("countdown");
+            timeLimit--;
+            countdownElement.textContent = timeLimit;
+            if (timeLimit <= 0) {
+                clearInterval(timer);
+                document.getElementById("quiz-form").submit();
+            }
+        }, 1000);
+
+        function showQuestion(index) {
+            questions.forEach(function (question, i) {
+                if (i === index) {
+                    question.style.display = "block";
+                } else {
+                    question.style.display = "none";
+                }
+            });
+
+            document.getElementById("prev-button").disabled = index === 0;
+            document.getElementById("next-button").disabled = index === questions.length - 1;
+
+            if (index === questions.length - 1) {
+                document.getElementById("submit-button").style.display = "block";
+            } else {
+                document.getElementById("submit-button").style.display = "none";
+            }
+        }
+
+        showQuestion(currentQuestionIndex);
+
+        document.getElementById("prev-button").addEventListener("click", function () {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            }
+        });
+
+        document.getElementById("next-button").addEventListener("click", function () {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                showQuestion(currentQuestionIndex);
+            }
+        });
+
+        var radioButtons = document.querySelectorAll("input[type=radio]");
+        radioButtons.forEach(function (radioButton) {
+            radioButton.addEventListener("change", function () {
+                document.getElementById("submit-button").disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
