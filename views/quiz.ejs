@@ -27,6 +27,25 @@
             width: 100%;
             height: 100%;
         }
+        .container {
+            max-width: 600px; /* Adjust the width as needed */
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Adjust styles for better display on smaller screens */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            #quiz-timer {
+                font-size: 16px;
+            }
+            .navigation-buttons {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
 <body>

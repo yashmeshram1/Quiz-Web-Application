@@ -5,9 +5,9 @@
         "correctAnswer": "Tim Berners-Lee"
     },
     {
-        "question": "What is the correct syntax of web address?",
-        "options": ["port://domain.filenmae:path/scheme/prefix","prefix://scheme.port:domain/filename/path","path://prefix.port:domain/filename/scheme","scheme://prefix.domain:port/path/filename"],
-        "correctAnswer": "scheme://prefix.domain:port/path/filename"
+        "question": "Which tag is used to define a standard cell in an HTML table?",
+        "options": ["<cell>","<td>","<th>","<standard>"],
+        "correctAnswer": "<td>"
     },
     {
         "question": "Which attribute specifies a unique alphanumeric identifier to be associated with an element?",
